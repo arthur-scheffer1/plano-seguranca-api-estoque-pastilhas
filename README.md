@@ -1,11 +1,11 @@
-# 🔐 Matriz e Plano de Segurança da API — Estoque de Pastilhas
+# Matriz e Plano de Segurança da API — Estoque de Pastilhas
 
 **API de Controle de Estoque de Pastilhas — DDA Metalúrgica**
 
 | | |
 |---|---|
 | **Unidade Curricular** | Desenvolvimento de Sistemas Web — UniSenai |
-| **Aluno** | Scheffer |
+| **Aluno** | Arthur Scheffer |
 | **Tecnologias** | Java, Spring Boot, Spring Security, Spring Data JPA, PostgreSQL, Flyway |
 | **Data** | Outubro de 2026 |
 
@@ -155,7 +155,7 @@ O perfil fica em uma coluna da tabela usuarios. Todo cadastro feito por /auth/re
 | **Domain (@Entity)** | Usuario (nome, email único, senha em hash, ativo, perfil) e Movimentacao com usuário e data obrigatórios. |
 | **Banco e configuração** | PostgreSQL com usuário próprio, Flyway versionando o esquema, segredos em variáveis de ambiente. |
 
-### 2.10 Configuração prevista (base da Aula 10)
+### 2.10 Configuração prevista 
 
 ```java
 http
@@ -188,19 +188,3 @@ http
 | Consultar histórico de movimentações | ❌ Não | ✅ Sim | ✅ Sim |
 | Gerenciar usuários (/usuarios) | ❌ Não | ❌ Não | ✅ Sim |
 
----
-
-## 4. Relação com o conteúdo das aulas
-
-| Aula / Material | Como foi aplicado no plano |
-|---|---|
-| **Aula 02 — HTTP na prática** | Token no header Authorization; status codes 401, 403, 400, 404, 201 e 204; Content-Type: application/json. |
-| **Aula 3 — Arquitetura e System Design** | Cada controle fica em uma camada: Controller, Service, Repository, Domain. |
-| **Aula 4 — Spring e Spring Boot** | Spring Security como projeto do ecossistema; injeção do PasswordEncoder como @Bean; configuração externa (variáveis de ambiente). |
-| **Aula 6 — ORM, JPA e PostgreSQL** | Parâmetros como no PreparedStatement contra SQL Injection; @Transactional com rollback; usuário próprio no PostgreSQL. |
-| **Aula 7 — Spring Data JPA** | JpaRepository, consultas derivadas, @Query com @Param, cuidado com nativeQuery, Pageable, findById para responder 404. |
-| **Aula 9 — Versionamento de banco (Flyway)** | Tabela usuarios e Administrador inicial criados por migrações versionadas. |
-| **Aula 10 — Autenticação em APIs** | Autenticação × autorização, Bearer token, API stateless, senha em hash BCrypt, tabela usuarios, UserDetailsService, AuthenticationManager, JWT (sub, iat, exp), csrf.disable(), /auth/\*\* público. |
-| **EaD Bloco 3 — E-book Segurança em Sistemas Web** | SSL/TLS e HTTPS, SQL Injection, XSS, CSRF, Clickjacking, autenticação e autorização, OAuth 2.0 e JWT, CORS. |
-
-Essas decisões serão implementadas com Spring Security nas próximas etapas do projeto (autenticação, Aula 10, e autorização, Aula 11).
